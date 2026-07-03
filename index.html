@@ -4,42 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Second Spine — Giving Worn Books a Second Life</title>
-  <meta name="description" content="Second Spine restores used and damaged books with new covers, then donates them to libraries, classrooms, and community spaces in Saratoga, CA." />
+  <meta name="description" content="Second Spine restores used and damaged books with new covers, then donates them back to libraries, classrooms, and community spaces in Saratoga, CA." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="intro-mode">
   <div id="top"></div>
+
+  <!-- Bookmark ribbon — scroll progress -->
+  <div id="bookmark-ribbon" aria-hidden="true"></div>
 
   <!-- ===== Header / Nav ===== -->
   <header class="site-header">
     <div class="nav-wrap">
       <a href="#top" class="brand" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
-        <svg class="brand-logo" viewBox="0 0 54 52" width="48" height="46" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="43" width="46" height="6" rx="2" fill="#ffffff18"/>
-          <rect x="5" y="38" width="44" height="9" rx="2.5" fill="#efe7d9"/>
-          <rect x="5" y="38" width="6" height="9" rx="2.5" fill="#d9bcaf"/>
-          <line x1="14" y1="40" x2="46" y2="40" stroke="#c8a29360" stroke-width="1.2"/>
-          <line x1="14" y1="44" x2="46" y2="44" stroke="#c8a29330" stroke-width="1"/>
-          <rect x="8" y="28" width="38" height="9" rx="2.5" fill="#6f3a2c"/>
-          <rect x="8" y="28" width="6" height="9" rx="2.5" fill="#5a2e22"/>
-          <line x1="17" y1="30" x2="43" y2="30" stroke="#ffffff35" stroke-width="1.2"/>
-          <line x1="17" y1="34" x2="43" y2="34" stroke="#ffffff20" stroke-width="1"/>
-          <rect x="3" y="18" width="46" height="9" rx="2.5" fill="#7c8d5f"/>
-          <rect x="3" y="18" width="6" height="9" rx="2.5" fill="#657548"/>
-          <line x1="12" y1="20" x2="46" y2="20" stroke="#ffffff35" stroke-width="1.2"/>
-          <line x1="12" y1="24" x2="46" y2="24" stroke="#ffffff20" stroke-width="1"/>
-          <rect x="7" y="8" width="40" height="9" rx="2.5" fill="#3e5230"/>
-          <rect x="7" y="8" width="6" height="9" rx="2.5" fill="#2f3f25"/>
-          <line x1="16" y1="10" x2="44" y2="10" stroke="#ffffff35" stroke-width="1.2"/>
-          <line x1="16" y1="14" x2="44" y2="14" stroke="#ffffff20" stroke-width="1"/>
-          <rect x="7" y="8" width="2" height="9" rx="1" fill="#ffffff30"/>
+        <svg class="brand-book" viewBox="0 0 64 46" width="34" height="25" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="36" width="52" height="8" rx="2"/>
+            <rect x="12" y="27" width="40" height="9" rx="2"/>
+            <path d="M32 11 C27 6 18 6 14 9 L16 23 C20 20.5 27 21 32 25 C37 21 44 20.5 48 23 L50 9 C46 6 37 6 32 11 Z"/>
+            <path d="M32 11 L32 25"/>
+          </g>
+          <path d="M42 29 L42 34" stroke="#ef8779" stroke-width="3.4" stroke-linecap="round"/>
         </svg>
         <span class="brand-text">
-          <span class="brand-mark">SECOND</span>
-          <span class="brand-mark">SPINE</span>
+          <span class="brand-mark">second spine</span>
         </span>
       </a>
 
@@ -49,19 +41,19 @@
 
       <nav class="main-nav">
         <ul>
-          <li><a href="#mission">Mission</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#impact">Impact</a></li>
-          <li><a href="#involved">Get Involved</a></li>
-          <li><a href="mailto:admin@secondspine.org">Contact</a></li>
+          <li><a href="#mission"><i>ch.01</i> Mission</a></li>
+          <li><a href="#how-it-works"><i>ch.02</i> How It Works</a></li>
+          <li><a href="#impact"><i>ch.03</i> Impact</a></li>
+          <li><a href="#story"><i>ch.04</i> Our Story</a></li>
+          <li><a href="#involved"><i>ch.05</i> Get Involved</a></li>
         </ul>
         <div class="nav-actions">
           <div class="nav-social">
             <a href="https://instagram.com/secondspineorganization" aria-label="Instagram" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" width="19" height="19"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.64 4.13.34 4.9.14 5.77.08 7.04.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0Zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84Zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4Zm6.41-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44Z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.64 4.13.34 4.9.14 5.77.08 7.04.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0Zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84Zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4Zm6.41-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44Z"/></svg>
             </a>
             <a href="mailto:admin@secondspine.org" aria-label="Email us">
-              <svg viewBox="0 0 24 24" width="19" height="19"><path fill="currentColor" d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm10 7.2L3.6 6H20.4L12 11.2ZM3 7.9V18h18V7.9l-9 5.6-9-5.6Z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm10 7.2L3.6 6H20.4L12 11.2ZM3 7.9V18h18V7.9l-9 5.6-9-5.6Z"/></svg>
             </a>
           </div>
           <a href="#involved" class="nav-donate-btn">Donate Books</a>
@@ -91,24 +83,108 @@
               <div class="cb-fp cb-fp--9"><div class="cb-fp-front"></div><div class="cb-fp-back"></div></div>
               <div class="cb-fp cb-fp--8"><div class="cb-fp-front"></div><div class="cb-fp-back"></div></div>
               <div class="cb-fp cb-fp--7"><div class="cb-fp-front"></div><div class="cb-fp-back"></div></div>
-              <div class="cb-fp cb-fp--6"><div class="cb-fp-front"></div><div class="cb-fp-back"></div></div>
-              <div class="cb-fp cb-fp--5"><div class="cb-fp-front"></div><div class="cb-fp-back"></div></div>
-              <div class="cb-fp cb-fp--4"><div class="cb-fp-front"></div><div class="cb-fp-back"></div></div>
-              <div class="cb-fp cb-fp--3"><div class="cb-fp-front"></div><div class="cb-fp-back"></div></div>
-              <div class="cb-fp cb-fp--2"><div class="cb-fp-front"></div><div class="cb-fp-back"></div></div>
-              <div class="cb-fp cb-fp--1"><div class="cb-fp-front"></div><div class="cb-fp-back"></div></div>
+              <div class="cb-fp cb-fp--6">
+                <div class="cb-fp-front">
+                  <!-- a page with the library's stamp on it -->
+                  <span class="cb-page-stamp" aria-hidden="true">second spine<br>saratoga, ca</span>
+                </div>
+                <div class="cb-fp-back"></div>
+              </div>
+              <div class="cb-fp cb-fp--5">
+                <div class="cb-fp-front">
+                  <!-- margin doodle in coral ink -->
+                  <svg class="cb-page-doodle" viewBox="0 0 130 74" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 16 C34 52 52 54 58 36 C63 22 46 16 42 30 C38 46 66 54 100 46" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M88 34 L106 45 L92 60" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="cb-fp-back"></div>
+              </div>
+              <div class="cb-fp cb-fp--4">
+                <div class="cb-fp-front">
+                  <!-- full-page ink illustration -->
+                  <div class="cb-page-plate" aria-hidden="true">
+                    <svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+                      <g fill="none" stroke="#6a7d4d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="30" y="78" width="100" height="14" rx="2"/>
+                        <rect x="38" y="62" width="84" height="16" rx="2"/>
+                        <rect x="48" y="46" width="64" height="16" rx="2"/>
+                        <path d="M80 20 C68 10 48 10 40 16 L44 42 C52 37 68 38 80 46 C92 38 108 37 116 42 L120 16 C112 10 92 10 80 20 Z"/>
+                        <path d="M80 20 L80 46"/>
+                      </g>
+                      <path d="M96 62 L96 78" stroke="#ef8779" stroke-width="5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="cb-plate-caption">fig. 1 &mdash; a book, waiting</span>
+                  </div>
+                </div>
+                <div class="cb-fp-back"></div>
+              </div>
+              <div class="cb-fp cb-fp--3">
+                <div class="cb-fp-front">
+                  <!-- chapter opening -->
+                  <div class="cb-page-chapter" aria-hidden="true">
+                    <span>chapter one</span>
+                    <em>The Shelf</em>
+                  </div>
+                </div>
+                <div class="cb-fp-back"></div>
+              </div>
+              <div class="cb-fp cb-fp--2">
+                <div class="cb-fp-front">
+                  <!-- dedication -->
+                  <p class="cb-page-dedication" aria-hidden="true">for every reader,<br>and every book that waited &mdash;</p>
+                </div>
+                <div class="cb-fp-back"></div>
+              </div>
+              <div class="cb-fp cb-fp--1">
+                <div class="cb-fp-front">
+                  <!-- title page — visible for a beat after the cover opens -->
+                  <div class="cb-titlepage" aria-hidden="true">
+                    <svg class="cb-tp-mark" viewBox="0 0 64 46" width="46" height="33" xmlns="http://www.w3.org/2000/svg">
+                      <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="6" y="36" width="52" height="8" rx="2"/>
+                        <rect x="12" y="27" width="40" height="9" rx="2"/>
+                        <path d="M32 11 C27 6 18 6 14 9 L16 23 C20 20.5 27 21 32 25 C37 21 44 20.5 48 23 L50 9 C46 6 37 6 32 11 Z"/>
+                        <path d="M32 11 L32 25"/>
+                      </g>
+                      <path d="M42 29 L42 34" stroke="#ef8779" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <span class="cb-tp-title">Second Spine</span>
+                    <span class="cb-tp-sub">giving worn books a second life</span>
+                    <span class="cb-tp-loc">saratoga &middot; california</span>
+                  </div>
+                </div>
+                <div class="cb-fp-back"></div>
+              </div>
             </div>
             <!-- Front cover -->
+            <!-- rust ribbon bookmark hanging from the pages -->
+            <div class="cb-ribbon" aria-hidden="true"></div>
             <div class="cb-cover" id="cb-cover">
               <div class="cb-cover-face">
                 <div class="cb-cover-inset"></div>
+                <div class="cb-hinge" aria-hidden="true"></div>
+                <!-- book emblem, stamped in cream foil -->
+                <svg class="cb-emblem" viewBox="0 0 64 46" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="6" y="36" width="52" height="8" rx="2"/>
+                    <rect x="12" y="27" width="40" height="9" rx="2"/>
+                    <path d="M32 11 C27 6 18 6 14 9 L16 23 C20 20.5 27 21 32 25 C37 21 44 20.5 48 23 L50 9 C46 6 37 6 32 11 Z"/>
+                    <path d="M32 11 L32 25"/>
+                  </g>
+                  <path d="M42 29 L42 34" stroke="#e3c3b4" stroke-width="3" stroke-linecap="round"/>
+                </svg>
                 <div class="cb-cover-titles">
                   <span class="cb-title-word">SECOND</span>
                   <span class="cb-title-word">SPINE</span>
                 </div>
-                <p class="cb-cover-tagline">Nonprofit &middot; Restored Books</p>
-                <p class="cb-cover-stat">We restore and redistribute books to underserved communities &mdash; <strong>by hand</strong>, free of charge.</p>
-                <button class="get-started-btn" id="get-started-btn">Learn More</button>
+                <svg class="cb-rule" viewBox="0 0 90 10" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 5 H36 M54 5 H90" stroke="currentColor" stroke-width="1"/>
+                  <path d="M45 0 L50 5 L45 10 L40 5 Z" fill="currentColor"/>
+                </svg>
+                <p class="cb-cover-tagline">giving worn books a second life</p>
+                <button class="get-started-btn" id="get-started-btn">Start Your Journey</button>
+                <p class="cb-cover-est">saratoga &middot; california</p>
               </div>
               <div class="cb-cover-inside"></div>
             </div>
@@ -117,13 +193,27 @@
       </div>
     </div>
 
-    <!-- Permanent hero revealed after intro animation -->
+    <!-- Permanent hero (the "title page") revealed after intro animation -->
     <div class="hero-site-layer" id="hero-site-layer" aria-hidden="true">
       <div class="hsl-inner">
-        <p class="hsl-eyebrow">Saratoga, CA &nbsp;·&nbsp; Book Restoration</p>
-        <h1 class="hsl-title" aria-label="Second Spine">
-          <span class="hsl-word">SECOND</span>
-          <span class="hsl-word">SPINE</span>
+        <p class="hsl-eyebrow">
+          <svg class="hsl-glyph" viewBox="0 0 40 24" width="30" height="18" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6 C16 2.5 9 2.5 6 5 L7.5 18 C11 16 16 16.5 20 19.5 C24 16.5 29 16 32.5 18 L34 5 C31 2.5 24 2.5 20 6 Z"/>
+              <path d="M20 6 L20 19.5"/>
+            </g>
+          </svg>
+          second spine nonprofit &middot; saratoga, ca
+          <svg class="hsl-glyph" viewBox="0 0 40 24" width="30" height="18" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6 C16 2.5 9 2.5 6 5 L7.5 18 C11 16 16 16.5 20 19.5 C24 16.5 29 16 32.5 18 L34 5 C31 2.5 24 2.5 20 6 Z"/>
+              <path d="M20 6 L20 19.5"/>
+            </g>
+          </svg>
+        </p>
+        <h1 class="hsl-title" aria-label="Giving worn books a second life.">
+          <span class="hsl-word">giving worn books</span>
+          <span class="hsl-word">a <em>second</em> life.</span>
         </h1>
         <div class="hsl-shelf" aria-hidden="true">
           <div class="hsl-book b1"></div>
@@ -135,205 +225,333 @@
           <div class="hsl-book b7"></div>
         </div>
         <p class="hsl-tagline">
-          Restoring books. Redistributing them to the communities that need them most.
+          Second Spine restores used and damaged books with new covers, then donates them back to libraries, classrooms, and community spaces.
         </p>
         <div class="hsl-cta-row">
-          <a href="#how-it-works" class="hsl-btn hsl-ghost">How It Works</a>
           <a href="#involved" class="hsl-btn hsl-solid">Donate Books</a>
+          <a href="#how-it-works" class="hsl-btn hsl-ghost">See How It Works</a>
         </div>
       </div>
       <div class="hsl-scroll" aria-hidden="true">
-        <span class="hsl-scroll-label">Scroll</span>
+        <span class="hsl-scroll-label">keep reading</span>
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>
         </svg>
       </div>
     </div>
+
+    <!-- torn paper edge into chapter one -->
+    <div class="tear tear-hero" aria-hidden="true"></div>
   </section>
 
   <main>
 
-  <!-- ===== Mission ===== -->
+  <!-- ===== Chapter 01 — Mission ===== -->
   <section class="mission" id="mission">
+    <span class="page-num" aria-hidden="true">p. 01</span>
     <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">Our Mission</p>
-        <h2 class="section-title">Dedicated to restoring and redistributing books to underserved communities.</h2>
-      </div>
-      <p class="mission-lead">
-        Books are regularly removed from library shelves and school classrooms because their covers are damaged &mdash; not because the content has lost value. Second Spine collects those books, restores them by hand, and redistributes them to community members who need them, at no cost.
-      </p>
 
-      <div class="mission-pillars">
-        <div class="pillar">
-          <span class="pillar-num" aria-hidden="true">01</span>
-          <div class="pillar-body">
-            <h3>Reduce Waste</h3>
-            <p>A worn cover is not a reason to throw away a book. We repair what would otherwise be discarded: readable, valuable books that just need a new outer layer.</p>
-          </div>
+      <div class="mission-spread" data-reveal>
+        <!-- Torn-paper sheet, straight from the Instagram post -->
+        <div class="mission-sheet">
+          <p class="mission-sheet-brand">
+            second spine nonprofit
+            <svg class="sheet-glyph" viewBox="0 0 40 24" width="28" height="17" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 C16 2.5 9 2.5 6 5 L7.5 18 C11 16 16 16.5 20 19.5 C24 16.5 29 16 32.5 18 L34 5 C31 2.5 24 2.5 20 6 Z"/>
+                <path d="M20 6 L20 19.5"/>
+              </g>
+            </svg>
+          </p>
+          <h2 class="mission-sheet-title">what is our<br>mission?</h2>
+          <svg class="coral-arrow" viewBox="0 0 130 74" width="120" height="68" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16 C34 52 52 54 58 36 C63 22 46 16 42 30 C38 46 66 54 100 46" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+            <path d="M88 34 L106 45 L92 60" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
-        <div class="pillar">
-          <span class="pillar-num" aria-hidden="true">02</span>
-          <div class="pillar-body">
-            <h3>Restore Access</h3>
-            <p>Students and families shouldn't lose access to books because of physical damage. We keep books in circulation so more readers can find them.</p>
-          </div>
-        </div>
-        <div class="pillar">
-          <span class="pillar-num" aria-hidden="true">03</span>
-          <div class="pillar-body">
-            <h3>Share Stories</h3>
-            <p>Restored books are redistributed to underserved community members through our distribution partners &mdash; free, no cost to the recipient.</p>
-          </div>
+
+        <!-- The answer, in the brand's speech bubbles -->
+        <div class="mission-answer">
+          <p class="bubble">Books are often discarded because their covers are torn, outdated, or damaged &mdash; even when the stories inside are still worth reading.</p>
+          <p class="bubble bubble-alt">Second Spine gives those books a renewed life by restoring their covers by hand and returning them to places where they can be read again &mdash; libraries, classrooms, and community spaces.</p>
+          <p class="bubble-note" aria-hidden="true">free of charge, always</p>
         </div>
       </div>
+
+      <!-- Before / after: the actual repair -->
+      <div class="repair-strip" data-reveal>
+        <figure class="sticker">
+          <svg viewBox="0 0 150 110" width="140" height="102" role="img" aria-label="A worn book with a torn, damaged cover">
+            <path d="M75 30 C60 14 32 12 16 20 L20 88 C36 80 60 82 75 94 Z" fill="#d8c9a8"/>
+            <path d="M75 30 C90 14 118 12 134 20 L130 88 C114 80 90 82 75 94 Z" fill="#e6dcc2"/>
+            <path d="M16 20 L10 26 L15 90 L20 88 Z" fill="#8a6f52"/>
+            <path d="M134 20 L140 26 L135 90 L130 88 Z" fill="#a08a66"/>
+            <path d="M140 26 L135 90 L128 84 L133 30 Z" fill="#6e5740" opacity="0.7"/>
+            <g stroke="#a5946f" stroke-width="2" stroke-linecap="round" opacity="0.8">
+              <path d="M30 34 Q50 30 68 36"/><path d="M30 46 Q50 42 68 48"/><path d="M30 58 Q50 54 68 60"/><path d="M30 70 Q48 66 64 72"/>
+              <path d="M82 36 Q100 30 120 34"/><path d="M82 48 Q100 42 120 46"/><path d="M82 60 Q100 54 120 58"/>
+            </g>
+            <path d="M104 12 L118 4 L122 18 L112 24 Z" fill="#c9b48d"/>
+            <path d="M20 88 L14 98 L26 94 Z" fill="#b09d78"/>
+          </svg>
+          <figcaption>before</figcaption>
+        </figure>
+
+        <svg class="coral-arrow repair-arrow" viewBox="0 0 110 40" width="96" height="36" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 24 Q40 12 82 20" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+          <path d="M70 8 L88 21 L72 34" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <figure class="sticker">
+          <svg viewBox="0 0 150 110" width="140" height="102" role="img" aria-label="The same book restored with a clean new hardcover">
+            <rect x="26" y="18" width="98" height="74" rx="5" fill="#3e5230"/>
+            <rect x="26" y="18" width="14" height="74" rx="5" fill="#2c3d22"/>
+            <rect x="36" y="92" width="88" height="7" rx="2" fill="#efe3c8"/>
+            <rect x="38" y="94" width="84" height="1.6" fill="#d8c9a8"/>
+            <rect x="52" y="34" width="58" height="2.4" rx="1.2" fill="#efe7d9" opacity="0.85"/>
+            <rect x="60" y="42" width="42" height="2.4" rx="1.2" fill="#efe7d9" opacity="0.55"/>
+            <rect x="42" y="22" width="2.4" height="66" fill="#efe7d9" opacity="0.25"/>
+          </svg>
+          <figcaption>after</figcaption>
+        </figure>
+
+        <p class="repair-caption">a &ldquo;second spine&rdquo; &mdash; quite literally.</p>
+      </div>
+
+      <!-- Pillars as restoration tags -->
+      <ul class="tag-row" aria-label="What our work stands for">
+        <li class="tag" data-reveal>
+          <span class="tag-hole" aria-hidden="true"></span>
+          <h3>Reduce Waste</h3>
+          <p>A torn cover is not a reason to throw a book away. We repair what would otherwise be discarded.</p>
+        </li>
+        <li class="tag tag-2" data-reveal>
+          <span class="tag-hole" aria-hidden="true"></span>
+          <h3>Restore Books</h3>
+          <p>New covers, new spines, bound by hand at volunteer workshops. No two come out alike.</p>
+        </li>
+        <li class="tag tag-3" data-reveal>
+          <span class="tag-hole" aria-hidden="true"></span>
+          <h3>Share Stories</h3>
+          <p>Restored books go back to libraries, classrooms, and neighborhoods &mdash; free to whoever needs them.</p>
+        </li>
+      </ul>
     </div>
+    <div class="tear tear-mission-bottom" aria-hidden="true"></div>
   </section>
 
-  <!-- ===== How It Works ===== -->
+  <!-- ===== Chapter 02 — How It Works: the shelf ===== -->
   <section class="how-it-works" id="how-it-works">
+    <span class="page-num" aria-hidden="true">p. 02</span>
     <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow light">How It Works</p>
-        <h2 class="section-title light">From collection to community, in four steps.</h2>
-      </div>
+      <header class="chapter-head" data-reveal>
+        <p class="chapter-mark">chapter 02</p>
+        <h2 class="chapter-title">How a book gets its second spine.</h2>
+        <p class="chapter-sub">Four steps, all by hand. Pull a book off the shelf to read each one.</p>
+      </header>
 
-      <ol class="steps-list" aria-label="Our four-step book restoration process">
-        <li class="step">
-          <span class="step-num" aria-hidden="true">01</span>
-          <div class="step-body">
-            <h3 class="step-title">Collect</h3>
-            <p class="step-desc">We gather used, damaged, or unwanted books from families, schools, and community partners. Drop-off boxes are available at the Saratoga Library.</p>
+      <ol class="shelf" aria-label="Our four-step restoration process">
+        <li class="spine-item open" data-spine>
+          <h3 class="spine-h">
+            <button class="spine-head" aria-expanded="true" aria-controls="step-collect">
+              <span class="spine-num">01</span>
+              <span class="spine-word">Collect</span>
+              <span class="spine-bands" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="spine-panel" id="step-collect">
+            <div class="spine-page">
+              <p class="spine-step-label">step one</p>
+              <h4>Collect</h4>
+              <p>We gather used, damaged, or unwanted books from families, schools, and community partners. Drop-off boxes live at the Saratoga Library.</p>
+            </div>
           </div>
         </li>
-        <li class="step">
-          <span class="step-num" aria-hidden="true">02</span>
-          <div class="step-body">
-            <h3 class="step-title">Sort</h3>
-            <p class="step-desc">Each book is checked for readability, physical condition, age level, and donation fit. Books in good shape inside go forward; others are recycled responsibly.</p>
+        <li class="spine-item" data-spine>
+          <h3 class="spine-h">
+            <button class="spine-head" aria-expanded="false" aria-controls="step-sort">
+              <span class="spine-num">02</span>
+              <span class="spine-word">Sort</span>
+              <span class="spine-bands" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="spine-panel" id="step-sort">
+            <div class="spine-page">
+              <p class="spine-step-label">step two</p>
+              <h4>Sort</h4>
+              <p>Books are checked for readability, condition, age level, and donation fit. Good pages go forward; the rest is recycled responsibly.</p>
+            </div>
           </div>
         </li>
-        <li class="step">
-          <span class="step-num" aria-hidden="true">03</span>
-          <div class="step-body">
-            <h3 class="step-title">Restore</h3>
-            <p class="step-desc">Volunteers remove damaged covers, create new covers and spines by hand, and prepare each book for reuse. No two restored books look exactly alike.</p>
+        <li class="spine-item" data-spine>
+          <h3 class="spine-h">
+            <button class="spine-head" aria-expanded="false" aria-controls="step-restore">
+              <span class="spine-num">03</span>
+              <span class="spine-word">Restore</span>
+              <span class="spine-bands" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="spine-panel" id="step-restore">
+            <div class="spine-page">
+              <p class="spine-step-label">step three</p>
+              <h4>Restore</h4>
+              <p>Volunteers remove damaged covers, create new covers and spines, and prepare each book for reuse. This is the &ldquo;second spine.&rdquo;</p>
+            </div>
           </div>
         </li>
-        <li class="step">
-          <span class="step-num" aria-hidden="true">04</span>
-          <div class="step-body">
-            <h3 class="step-title">Donate</h3>
-            <p class="step-desc">Finished books are donated to libraries, classrooms, and community spaces where they can be read again, free to whoever needs them.</p>
+        <li class="spine-item" data-spine>
+          <h3 class="spine-h">
+            <button class="spine-head" aria-expanded="false" aria-controls="step-donate">
+              <span class="spine-num">04</span>
+              <span class="spine-word">Donate</span>
+              <span class="spine-bands" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="spine-panel" id="step-donate">
+            <div class="spine-page">
+              <p class="spine-step-label">step four</p>
+              <h4>Donate</h4>
+              <p>Finished books are donated to libraries, classrooms, and community spaces &mdash; free to anyone who wants to read them.</p>
+            </div>
           </div>
         </li>
       </ol>
+      <div class="shelf-board" aria-hidden="true"></div>
     </div>
   </section>
 
-  <!-- ===== Impact stats ===== -->
-  <!-- NOTE: Numbers below are placeholders — update as the project grows -->
+  <!-- ===== Chapter 03 — Impact: the library card ===== -->
   <section class="impact" id="impact">
+    <span class="page-num" aria-hidden="true">p. 03</span>
     <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow light">Our Impact</p>
-        <h2 class="section-title light">Our work, in numbers.</h2>
-      </div>
-      <div class="stats">
-        <!-- PLACEHOLDER: update data-target when real count is confirmed -->
-        <div class="stat">
-          <span class="stat-num" data-target="120" data-suffix="+">120+</span>
-          <span class="stat-label">Books Restored</span>
+      <header class="chapter-head" data-reveal>
+        <p class="chapter-mark light">chapter 03</p>
+        <h2 class="chapter-title light">Our record so far.</h2>
+        <p class="chapter-sub light">Small, real numbers &mdash; updated as the project grows.</p>
+      </header>
+
+      <!-- NOTE: numbers are placeholders — update data-target values as real counts are confirmed -->
+      <div class="library-card" data-reveal>
+        <div class="lc-head">
+          <span class="lc-title">Second Spine &mdash; Library Record</span>
+          <span class="lc-loc">Saratoga, CA</span>
         </div>
-        <!-- PLACEHOLDER: update when partner count changes -->
-        <div class="stat">
-          <span class="stat-num" data-target="4" data-suffix="">4</span>
-          <span class="stat-label">Partner Sites</span>
+        <div class="lc-rows">
+          <!-- PLACEHOLDER: update data-target when real restored count is confirmed -->
+          <div class="lc-row">
+            <span class="lc-label">Books Restored</span>
+            <span class="lc-dots" aria-hidden="true"></span>
+            <span class="lc-stamp"><span class="stat-num" data-target="120" data-suffix="+">120+</span></span>
+          </div>
+          <!-- PLACEHOLDER: update data-target when donated count is confirmed -->
+          <div class="lc-row">
+            <span class="lc-label">Books Donated Back</span>
+            <span class="lc-dots" aria-hidden="true"></span>
+            <span class="lc-stamp lc-stamp-green"><span class="stat-num" data-target="90" data-suffix="+">90+</span></span>
+          </div>
+          <!-- PLACEHOLDER: update when partner count changes -->
+          <div class="lc-row">
+            <span class="lc-label">Partner Sites</span>
+            <span class="lc-dots" aria-hidden="true"></span>
+            <span class="lc-stamp"><span class="stat-num" data-target="4" data-suffix="">4</span></span>
+          </div>
+          <!-- PLACEHOLDER: update volunteer hours count -->
+          <div class="lc-row">
+            <span class="lc-label">Volunteer Hours</span>
+            <span class="lc-dots" aria-hidden="true"></span>
+            <span class="lc-stamp lc-stamp-green"><span class="stat-num" data-target="30" data-suffix="+">30+</span></span>
+          </div>
         </div>
-        <!-- PLACEHOLDER: update volunteer hours count -->
-        <div class="stat">
-          <span class="stat-num" data-target="30" data-suffix="+">30+</span>
-          <span class="stat-label">Volunteer Hours</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num" data-target="1" data-suffix="">1</span>
-          <span class="stat-label">Shared Mission</span>
-        </div>
+        <p class="lc-foot">every book on this card was repaired by hand.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== Community / Story ===== -->
+  <!-- ===== Chapter 04 — Our Story ===== -->
   <section class="story" id="story">
+    <span class="page-num" aria-hidden="true">p. 04</span>
     <div class="container story-grid">
-      <div class="story-text">
-        <p class="section-eyebrow">Our Story</p>
+      <div class="story-text" data-reveal>
+        <p class="chapter-mark">chapter 04</p>
         <h2 class="story-heading">Built by students.<br>Shared with readers.</h2>
-        <p class="story-lead">Second Spine started as a service project in Saratoga, CA, built around a specific problem: books are being pulled from circulation because of damaged covers, not damaged content. We fix the covers and put the books back.</p>
-        <p class="story-body">Covers tear. Spines crack. Libraries and schools remove books from their shelves. Those books still have value &mdash; they just need repair. We collect them, restore them by hand, and redistribute them to underserved community members who need them.</p>
-        <!-- PLACEHOLDER: Add partner mention / testimonial here -->
+        <p class="story-lead story-dropcap">Second Spine began as a hands-on service project: a way to combine design, sustainability, and literacy into something libraries and students could actually use.</p>
+        <p class="story-body">Covers tear. Spines crack. Libraries and schools pull books from their shelves &mdash; not because the stories stopped mattering, but because the bindings gave out. We collect those books, rebuild their covers at volunteer workshops, and put them back where readers can find them.</p>
         <p class="story-partner">
           <strong>Currently partnering with the Saratoga Library</strong> and local schools to collect, restore, and redistribute books to community members who need them.
         </p>
+        <!-- PLACEHOLDER: add a real community quote or partner testimonial here when one is available -->
+        <p class="story-margin-note" aria-hidden="true">started in saratoga, ca &mdash; growing one shelf at a time</p>
       </div>
-      <aside class="story-aside" aria-label="Project highlight">
-        <!-- PLACEHOLDER: Replace this shelf illustration with a real project photo -->
-        <div class="story-img-placeholder" aria-hidden="true">
-          <div class="placeholder-shelf">
-            <div class="ph-book" style="height:72px;background:#7c8d5f;width:18px"></div>
-            <div class="ph-book" style="height:58px;background:#6f3a2c;width:22px"></div>
-            <div class="ph-book" style="height:84px;background:#3e5230;width:16px"></div>
-            <div class="ph-book" style="height:64px;background:#d9bcaf;width:20px"></div>
-            <div class="ph-book" style="height:76px;background:#5a6e44;width:18px"></div>
-            <div class="ph-book" style="height:60px;background:#8a6f5a;width:24px"></div>
-            <div class="ph-book" style="height:80px;background:#c8a293;width:16px"></div>
+      <aside class="story-aside" aria-label="Project photos">
+        <!-- PLACEHOLDER: replace with a real workshop photo -->
+        <figure class="polaroid">
+          <div class="polaroid-img">
+            <div class="placeholder-shelf" aria-hidden="true">
+              <div class="ph-book" style="height:72px;background:#7c8d5f;width:18px"></div>
+              <div class="ph-book" style="height:58px;background:#8a4a38;width:22px"></div>
+              <div class="ph-book" style="height:84px;background:#3e5230;width:16px"></div>
+              <div class="ph-book" style="height:64px;background:#e3c3b4;width:20px"></div>
+              <div class="ph-book" style="height:76px;background:#5a6e44;width:18px"></div>
+              <div class="ph-book" style="height:60px;background:#8a6f5a;width:24px"></div>
+              <div class="ph-book" style="height:80px;background:#c8a293;width:16px"></div>
+            </div>
           </div>
-          <p class="placeholder-label">Photo coming soon</p>
-        </div>
+          <figcaption>workshop photo coming soon</figcaption>
+        </figure>
+        <!-- PLACEHOLDER: replace with a real restored-book photo -->
+        <figure class="polaroid polaroid-2">
+          <div class="polaroid-img polaroid-img-2">
+            <svg viewBox="0 0 150 110" width="120" height="88" aria-hidden="true">
+              <rect x="26" y="18" width="98" height="74" rx="5" fill="#8a4a38"/>
+              <rect x="26" y="18" width="14" height="74" rx="5" fill="#6e3a2c"/>
+              <rect x="36" y="92" width="88" height="7" rx="2" fill="#efe3c8"/>
+              <rect x="52" y="34" width="58" height="2.4" rx="1.2" fill="#efe7d9" opacity="0.85"/>
+              <rect x="60" y="42" width="42" height="2.4" rx="1.2" fill="#efe7d9" opacity="0.55"/>
+            </svg>
+          </div>
+          <figcaption>a finished restoration</figcaption>
+        </figure>
       </aside>
     </div>
   </section>
 
-  <!-- ===== Get Involved ===== -->
+  <!-- ===== Chapter 05 — Get Involved: library slips ===== -->
   <section class="involved" id="involved">
+    <span class="page-num" aria-hidden="true">p. 05</span>
     <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">Get Involved</p>
-        <h2 class="section-title">How to support Second Spine.</h2>
-        <p class="section-intro">Whether you have books to donate or time to give &mdash; we&rsquo;d love to have you involved.</p>
-      </div>
+      <header class="chapter-head" data-reveal>
+        <p class="chapter-mark">chapter 05</p>
+        <h2 class="chapter-title">Take a slip. Any slip.</h2>
+        <p class="chapter-sub">Whether you have books to give or time to give &mdash; there&rsquo;s a way in.</p>
+      </header>
 
       <div class="pathways">
-        <article class="pathway">
-          <div class="pathway-inner">
-            <h3>Donate Books</h3>
-            <p>Have books with damaged covers, or books your family no longer needs? Drop them at our donation box at the Saratoga Library. We do the rest.</p>
-            <button class="btn btn-ghost" id="find-box-btn">Find a Box</button>
-          </div>
+        <article class="slip" data-reveal>
+          <span class="slip-no">library slip &mdash; n&ordm; 01</span>
+          <h3>Donate Books</h3>
+          <p>Books with damaged covers, or books your family no longer needs? Drop them in our donation box at the Saratoga Library. We handle the rest.</p>
+          <button class="btn btn-ghost" id="find-box-btn">Find a Box</button>
         </article>
 
-        <article class="pathway pathway-featured">
-          <div class="pathway-inner">
-            <h3>Support Our Work</h3>
-            <p>Materials cost money. Help us fund covers, binding supplies, and workshop materials through our GoFundMe campaign.</p>
-            <a class="btn btn-primary" href="https://www.gofundme.com/f/support-second-spine/qr/o?attribution_id=sl:26cdb99f-29e6-4d58-b4ff-e73b4a359507&lang=en_US&ts=1780894651&utm_campaign=man_sharesheet_dash&utm_content=amp17_tb-amp20_t1&utm_medium=customer&utm_source=qr_code" target="_blank" rel="noopener">Donate Funds</a>
-          </div>
+        <article class="slip slip-featured" data-reveal>
+          <span class="slip-no">library slip &mdash; n&ordm; 02</span>
+          <h3>Support Our Work</h3>
+          <p>Covers, binding cloth, and glue cost money. Help fund workshop materials through our GoFundMe campaign.</p>
+          <a class="btn btn-primary" href="https://www.gofundme.com/f/support-second-spine/qr/o?attribution_id=sl:26cdb99f-29e6-4d58-b4ff-e73b4a359507&lang=en_US&ts=1780894651&utm_campaign=man_sharesheet_dash&utm_content=amp17_tb-amp20_t1&utm_medium=customer&utm_source=qr_code" target="_blank" rel="noopener">Donate Funds</a>
         </article>
 
-        <article class="pathway">
-          <div class="pathway-inner">
-            <h3>Volunteer</h3>
-            <p>Help sort, repair, and restore books at our workshops. You can also help with book distribution. Fill out our interest form and we&rsquo;ll follow up with next steps.</p>
-            <a class="btn btn-ghost" href="https://forms.gle/odcWNKe8w1nLU3Bn9" target="_blank" rel="noopener">Fill Out Interest Form</a>
-          </div>
+        <article class="slip" data-reveal>
+          <span class="slip-no">library slip &mdash; n&ordm; 03</span>
+          <h3>Volunteer</h3>
+          <p>Sort, repair, and rebind books at our workshops, or help with distribution. Fill out the interest form and we&rsquo;ll follow up with next steps.</p>
+          <a class="btn btn-ghost" href="https://forms.gle/odcWNKe8w1nLU3Bn9" target="_blank" rel="noopener">Fill Out Interest Form</a>
         </article>
 
-        <article class="pathway">
-          <div class="pathway-inner">
-            <h3>Partner With Us</h3>
-            <p>Libraries, schools, and community organizations can host book drives or receive restored books. Reach out to start a conversation.</p>
-            <button class="btn btn-ghost" id="contact-btn">Contact Us</button>
-          </div>
+        <article class="slip" data-reveal>
+          <span class="slip-no">library slip &mdash; n&ordm; 04</span>
+          <h3>Partner With Us</h3>
+          <p>Libraries, schools, and community organizations can host book drives or workshops, or receive restored books. Reach out to start a conversation.</p>
+          <button class="btn btn-ghost" id="contact-btn">Contact Us</button>
         </article>
       </div>
     </div>
@@ -388,27 +606,38 @@
     </div>
   </div>
 
-  <!-- ===== Final CTA ===== -->
+  <!-- ===== The Last Page ===== -->
   <section class="final-cta">
-    <div class="container final-cta-inner">
-      <h2>Ready to get involved?</h2>
-      <p>Whether you have books to donate or time to give, we&rsquo;d love to have you involved. Fill out our interest form and we&rsquo;ll reach out with next steps.</p>
+    <div class="container final-cta-inner" data-reveal>
+      <p class="the-end" aria-hidden="true">&mdash; the end &mdash;</p>
+      <h2>Help a book find its next reader.</h2>
+      <p class="almost-note" aria-hidden="true">(well, almost the end. every book still needs a reader first.)</p>
       <div class="final-cta-btns">
-        <a href="https://forms.gle/odcWNKe8w1nLU3Bn9" class="btn btn-cream" target="_blank" rel="noopener">Fill Out Interest Form</a>
-        <a href="#involved" class="btn btn-outline-cream">See All Ways to Help</a>
+        <a href="#involved" class="btn btn-primary">Donate Books</a>
+        <button class="btn btn-ghost js-contact-open" type="button">Contact Us</button>
       </div>
     </div>
   </section>
 
   </main>
 
-  <!-- ===== Footer ===== -->
+  <!-- ===== Footer — inside back cover ===== -->
   <footer class="site-footer" id="contact">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <span class="brand-mark footer-brand-name">SECOND<br>SPINE</span>
-        <p class="footer-tag">Dedicated to restoring and redistributing books to underserved communities.</p>
-        <p class="footer-sub">A student-led community project &middot; Saratoga, CA</p>
+        <!-- library pocket, like the inside back cover of an old hardback -->
+        <div class="pocket" aria-hidden="true">
+          <div class="pocket-card">
+            <span class="pocket-card-title">return to:</span>
+            <span class="pocket-card-line">Second Spine</span>
+            <span class="pocket-card-line">Saratoga Library, CA</span>
+          </div>
+          <div class="pocket-front">
+            <span class="pocket-label">second spine</span>
+          </div>
+        </div>
+        <p class="footer-tag">Restoring used and damaged books, and donating them back to the community.</p>
+        <p class="footer-sub">A student-led nonprofit &middot; Saratoga, CA</p>
         <div class="footer-social">
           <a href="https://instagram.com/secondspineorganization" aria-label="Instagram" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84Zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4Zm6.41-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44Z"/></svg>
@@ -420,13 +649,13 @@
       </div>
 
       <div class="footer-col">
-        <h4>Navigate</h4>
+        <h4>Chapters</h4>
         <ul>
-          <li><a href="#mission">Mission</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#impact">Impact</a></li>
-          <li><a href="#story">Our Story</a></li>
-          <li><a href="#involved">Get Involved</a></li>
+          <li><a href="#mission">01 &mdash; Mission</a></li>
+          <li><a href="#how-it-works">02 &mdash; How It Works</a></li>
+          <li><a href="#impact">03 &mdash; Impact</a></li>
+          <li><a href="#story">04 &mdash; Our Story</a></li>
+          <li><a href="#involved">05 &mdash; Get Involved</a></li>
         </ul>
       </div>
 
@@ -460,7 +689,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; <span id="year"></span> Second Spine &middot; secondspine.org &middot; A student-led community book restoration project.</p>
+      <p>&copy; <span id="year"></span> Second Spine &middot; secondspine.org &middot; set in Cormorant Garamond &middot; bound by hand in Saratoga, CA</p>
     </div>
   </footer>
 

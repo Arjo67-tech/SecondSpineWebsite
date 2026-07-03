@@ -220,6 +220,9 @@ function closeContactModal() {
 }
 
 if (contactBtn)   contactBtn.addEventListener("click", openContactModal);
+document.querySelectorAll(".js-contact-open").forEach((el) =>
+  el.addEventListener("click", openContactModal)
+);
 if (contactClose) contactClose.addEventListener("click", closeContactModal);
 if (contactModal) {
   contactModal.addEventListener("click", (e) => {
@@ -252,6 +255,73 @@ if (contactForm) {
 // Footer year
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// ===== How It Works — shelf of book spines =====
+(function initShelf() {
+  const spines = Array.from(document.querySelectorAll("[data-spine]"));
+  if (!spines.length) return;
+
+  function openSpine(target) {
+    spines.forEach((item) => {
+      const isTarget = item === target;
+      item.classList.toggle("open", isTarget);
+      const btn = item.querySelector(".spine-head");
+      if (btn) btn.setAttribute("aria-expanded", isTarget ? "true" : "false");
+    });
+  }
+
+  spines.forEach((item) => {
+    const btn = item.querySelector(".spine-head");
+    if (!btn) return;
+    btn.addEventListener("click", () => openSpine(item));
+    // hover pulls the book off the shelf on pointer devices
+    if (window.matchMedia("(hover: hover)").matches) {
+      item.addEventListener("mouseenter", () => openSpine(item));
+    }
+  });
+})();
+
+// ===== Bookmark ribbon — reading progress =====
+(function initRibbon() {
+  const ribbon = document.getElementById("bookmark-ribbon");
+  if (!ribbon) return;
+  let ticking = false;
+  function update() {
+    ticking = false;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+    ribbon.style.height = (pct * 100) + "vh";
+  }
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }, { passive: true });
+  update();
+})();
+
+// ===== Scroll reveals (skipped for reduced motion via CSS) =====
+(function initReveals() {
+  const els = document.querySelectorAll("[data-reveal]");
+  if (!els.length) return;
+  if (!("IntersectionObserver" in window)) {
+    els.forEach((el) => el.classList.add("revealed"));
+    return;
+  }
+  const obs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+  );
+  els.forEach((el) => obs.observe(el));
+})();
 
 // Count-up stats when scrolled into view
 const nums = document.querySelectorAll(".stat-num");
@@ -365,9 +435,9 @@ if ("IntersectionObserver" in window) {
       bookLayer.classList.add("cb-camera-zoom");
 
       setTimeout(() => {
-        // White flash overlay
+        // Paper-cream flash overlay — reads as the blank page filling the screen
         const flash = document.createElement("div");
-        flash.style.cssText = "position:fixed;inset:0;z-index:99999;background:#fff;opacity:0;pointer-events:none;transition:opacity 0.08s ease;";
+        flash.style.cssText = "position:fixed;inset:0;z-index:99999;background:#f5efe0;opacity:0;pointer-events:none;transition:opacity 0.08s ease;";
         document.body.appendChild(flash);
         requestAnimationFrame(() => { flash.style.opacity = "1"; });
 
